@@ -28,8 +28,11 @@ quiet_banner = colors.green + 'pwnquery' + colors.normal
 print(banner)
 
 def function1(domain):
-	search = str.lower(args.domain)
-	print()
+	if search is None:
+		print("Must use the '-d' argument to specify a company domain name. \n Ex: ./pwnquery.py breach -d foobar.com")
+	elif search is not None:
+		str.lower(args.domain)
+	return '' if search is None else str(search)
 	print("You searched the breach dump for: " + str.lower(search))
 	
 #1). Update URI to API endpoint for function2 and token (header assumes token, if bearer be sure to change accordingly.)
@@ -48,8 +51,12 @@ def function1(domain):
 	#print(r)
 
 def function2(company):
-	search = str.lower(args.company)
-	print()
+	search = args.company
+	if search is None:
+		print("Must use the '-c' argument to specify a company name. \n Ex: ./pwnquery.py facebook -d walmart")
+	elif search is not None:
+		str.lower(args.company)
+	return '' if search is None else str(search)
 
 #2). Update URI to API endpoint for function2 and token (header assumes token, if bearer be sure to change accordingly.)
 
