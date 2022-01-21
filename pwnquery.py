@@ -46,8 +46,14 @@ def function1(domain):
 			}
 
 		r = requests.get(url, headers=headers).json()
-		pprint.pprint(r)
-		#print(r)
+		
+		#write the file to disk if argument is set 
+		if file_name is not None:
+			with open(file_name.name, 'w') as file:
+				json.dump(r,file)
+		#print command output if writing to disk is not selected 
+		elif file_name is None:
+			pprint.pprint(r)
 
 def function2(company):
 	search = args.company
@@ -67,8 +73,14 @@ def function2(company):
 			}
 
 		r = requests.get(url, headers=headers).json()
-		pprint.pprint(r)
-		#print(r)
+
+				#write the file to disk if argument is set 
+		if file_name is not None:
+			with open(file_name.name, 'w') as file:
+				json.dump(r,file)
+		#print command output if writing to disk is not selected 
+		elif file_name is None:
+			pprint.pprint(r)
 
 #sub command arguments passed here 
 parser = argparse.ArgumentParser(add_help=False)
@@ -95,22 +107,26 @@ parser = argparse.ArgumentParser(prog="%s %s" % (os.path.basename(sys.argv[0]), 
 if function == "function1":
 	parser = argparse.ArgumentParser()
 	parser.add_argument('-d','--domain', help='Breach data domain to search for.',dest="domain") 
+	parser.add_argument('-o','--out', help='JSON output file name.', type= argparse.FileType('w'),dest="file_name")
+	#parser.add_argument('-q', '--quiet', help="supress banner", default=False, action='store_true', dest="quiet") 
 	args = parser.parse_args(sub_args)
-	#print(args.domain)
-	function1(args.domain)
+	breach(args.domain,args.file_name)
+
 elif function == "function2":
 	#parser = argparse.ArgumentParser()
-	parser.add_argument('-c','--company', help='Company name to search for function2 Breach.',dest="company")
+	parser.add_argument('-c','--company', help='Company name to search for Facebook Breach.',dest="company")
+	parser.add_argument('-o','--out', help='JSON output file name.',type= argparse.FileType('w'),dest="fb_file_name")
+	#parser.add_argument('-q', '--quiet', help="supress banner", default=False, action='store_true', dest="quiet") 
 	args = parser.parse_args(sub_args)
-	#print(args.company)
-	function2(args.company)
+	facebook(args.company,args.fb_file_name)
+
 elif function == "help":
-	parser = argparse.ArgumentParser(description="Examples: \n python3 query.py function1 --domain targetname.com \n python3 query.py function2 --company target company name", formatter_class=RawTextHelpFormatter,usage=SUPPRESS)
-	parser.add_argument('function1', help='Search breach dump data.') 
-	parser.add_argument('-d','--domain', help='Breach data domain to search for. Only use with function1 (e.g., "./query.py function1 -d targetname.com"',dest="domain") 
-	parser.add_argument('function2', help='This searches the function2 breach dump.') 
-	parser.add_argument('-c','--company', help='Company name to search for function2 Breach. Only use with function2 (e.g., "./query.py function2 -c target company name"',dest="company") 
-	#parser.add_argument('-q', '--quiet', help="supress banner", default=False, action='store_true') 
+	parser = argparse.ArgumentParser(description="Examples: \n python3 query.py breach --domain salesforce.com \n python3 query.py facebook --company salesforce", formatter_class=RawTextHelpFormatter,usage=SUPPRESS)
+	parser.add_argument('breach', help='Search dumps from various breaches and associated cracked passwords. Useful for enumerating usernames and possibly valid passwords.') 
+	parser.add_argument('-d','--domain', help='Breach data domain to search for. Only use with breach (e.g., "./query.py breach -d walmart.com"',dest="domain") 
+	parser.add_argument('facebook', help='This searches the Facebook breach dump. Useful for finding phone numbers and DOB.') 
+	parser.add_argument('-c','--company', help='Company name to search for Facebook Breach. Only use with facebook (e.g., "./query.py facebook -c walmart"',dest="company") 
+	#parser.add_argument('-q', '--quiet', help="supress banner", default=False, action='store_true', dest="quiet")  
 	args = parser.parse_args() 
 
 #todo: suppress banner 
