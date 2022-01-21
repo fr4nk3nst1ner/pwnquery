@@ -28,50 +28,47 @@ quiet_banner = colors.green + 'pwnquery' + colors.normal
 print(banner)
 
 def function1(domain):
+	search = args.domain
 	if search is None:
 		print("Must use the '-d' argument to specify a company domain name. \n Ex: ./pwnquery.py breach -d foobar.com")
 	elif search is not None:
-		str.lower(args.domain)
-	return '' if search is None else str(search)
-	print("You searched the breach dump for: " + str.lower(search))
-	
-#1). Update URI to API endpoint for function2 and token (header assumes token, if bearer be sure to change accordingly.)
+		print("You searched the breach dump for: " + str.lower(search))
 
-	#ex: url = f"http://blah.com/api/function1"
-	url = f"URLgoeshere"
-	token = "tokengoeshere"
+	#1). Update URI to API endpoint for function2 and token (header assumes token, if bearer be sure to change accordingly.)
 
-	headers = {
-	        "Authorization": f"Token {token}",
-	        "Content-Type": "application/json;charset=utf-8"
-	        }
+		#ex: url = f"http://blah.com/api/function1"
+		url = f"URLgoeshere"
+		token = "tokengoeshere"
 
-	r = requests.get(url, headers=headers).json()
-	pprint.pprint(r)
-	#print(r)
+		headers = {
+			"Authorization": f"Token {token}",
+			"Content-Type": "application/json;charset=utf-8"
+			}
+
+		r = requests.get(url, headers=headers).json()
+		pprint.pprint(r)
+		#print(r)
 
 def function2(company):
 	search = args.company
 	if search is None:
 		print("Must use the '-c' argument to specify a company name. \n Ex: ./pwnquery.py facebook -d walmart")
 	elif search is not None:
-		str.lower(args.company)
-	return '' if search is None else str(search)
 
 #2). Update URI to API endpoint for function2 and token (header assumes token, if bearer be sure to change accordingly.)
 
-	#ex: url = f"http://blah.com/api/function1"
-	url = f"URLgoeshere"
-	token = "tokengoeshere"
+		#ex: url = f"http://blah.com/api/function1"
+		url = f"URLgoeshere"
+		token = "tokengoeshere"
 
-	headers = {
-	        "Authorization": f"Token {token}",
-	        "Content-Type": "application/json;charset=utf-8"
-	        }
+		headers = {
+			"Authorization": f"Token {token}",
+			"Content-Type": "application/json;charset=utf-8"
+			}
 
-	r = requests.get(url, headers=headers).json()
-	pprint.pprint(r)
-	#print(r)
+		r = requests.get(url, headers=headers).json()
+		pprint.pprint(r)
+		#print(r)
 
 #sub command arguments passed here 
 parser = argparse.ArgumentParser(add_help=False)
