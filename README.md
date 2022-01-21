@@ -4,6 +4,8 @@ Most of the work that went in to this is based off research in the article liste
 
 https://threat.tevora.com/diy-leaked-credential/
 
+Another shoutout to @t1d3nio and @pugbrain for the blood sweat and tears endured putting this project together and implementing 3 different working versions. (lol)
+
 It is a well written blog post; however, there were a couple gaps with getting the Django REST API stood up with regard to `urls.py` and `settings.py`. 
 
 1. Setup your postgres db and build schema following blog instructions
