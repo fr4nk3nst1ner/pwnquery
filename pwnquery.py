@@ -121,7 +121,7 @@ elif function == "function2":
 	facebook(args.company,args.fb_file_name)
 
 elif function == "help":
-	parser = argparse.ArgumentParser(description="Examples: \n python3 query.py breach --domain salesforce.com \n python3 query.py facebook --company salesforce", formatter_class=RawTextHelpFormatter,usage=SUPPRESS)
+	parser = argparse.ArgumentParser(description="Examples: \n python3 query.py breach --domain salesforce.com \n python3 query.py breach --domain salesforce.com -o file.out \n python3 query.py facebook --company salesforce \n python3 query.py facebook --company salesforce -o file.out", formatter_class=RawTextHelpFormatter,usage=SUPPRESS)
 	parser.add_argument('breach', help='Search dumps from various breaches and associated cracked passwords. Useful for enumerating usernames and possibly valid passwords.') 
 	parser.add_argument('-d','--domain', help='Breach data domain to search for. Only use with breach (e.g., "./query.py breach -d walmart.com"',dest="domain") 
 	parser.add_argument('facebook', help='This searches the Facebook breach dump. Useful for finding phone numbers and DOB.') 
