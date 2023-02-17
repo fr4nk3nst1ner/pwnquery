@@ -1,3 +1,5 @@
+## Overview
+
 Pwnquery is a Django API that is used for querying a database for credentials from various databreaches (described in more detail below). Additionally, I have included a companion Python script, `pwnquery.py`, used for querying the API. It is possible to interact with the API via web front end and cUrl as well with token-based auth.  
 
 Most of the work that went in to this is based off research in the article listed below (shoutout to Kevin Dick). 
@@ -5,6 +7,8 @@ Most of the work that went in to this is based off research in the article liste
 https://threat.tevora.com/diy-leaked-credential/
 
 Another shoutout to @t1d3nio and @pugbrain for the blood sweat and tears endured putting this project together and implementing 3 different working versions. (lol)
+
+## What Next and Steps to get this Running
 
 It is a well written blog post; however, there were a couple gaps with getting the Django REST API stood up with regard to `urls.py` and `settings.py`. 
 
@@ -144,7 +148,7 @@ python3.6 manage.py runserver interface_ip:port
 - I had template issues and had to add "django_filters" to INSTALLED_APPS within `settings.py`
 - Additionally, I have included a python script for querying the API (`pwnquery.py`) that supports sub args for querying both API endpoints (breach compilation and Facebook breach data). 
 
-Breach compilation descriptions: 
+## Breach Compilation Descriptions
 
 1. Compilation of Collections #1-5
 2. COMB
@@ -154,13 +158,13 @@ Breach compilation descriptions:
 Note: includes hashes that me and some buddies have cracked in a Postgres db that is uniqued and indexed. 
 Usefuleness: helps with username enumeration and included plaintext passwords that may or may not be valid anywhere else (for pen tests purposes only of course). 
 
-Facebook dump description:
+## Facebook dump description
 
 Facebook breach data that includes names, addresses, employers, and phone numbers (the latter 3 if they included that in their profiles).
 
-```bash
-pwnquery.py usage: 
+## Pwnquery Usage
 
+```bash
 Examples:
  python3 query.py function1 --domain targetname.com
  python3 query.py function2 --company target company name
