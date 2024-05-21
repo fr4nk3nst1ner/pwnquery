@@ -62,7 +62,7 @@ psycopg2==2.8.6
 pyasn1==0.4.2
 pycairo==1.16.2
 pycrypto==2.6.1
-pycryptodomex==3.4.7
+pycryptodomex==3.19.1
 pycups==1.9.73
 pycurl==7.43.0.1
 Pygments==2.8.1
