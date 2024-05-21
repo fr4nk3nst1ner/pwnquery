@@ -85,7 +85,7 @@ pytz==2021.1
 pyxdg==0.25
 PyYAML==3.12
 reportlab==3.4.0
-requests==2.18.4
+requests==2.32.0
 requests-unixsocket==0.1.5
 rich==9.13.0
 screen-resolution-extra==0.0.0
