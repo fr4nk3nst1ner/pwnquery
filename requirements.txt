@@ -94,7 +94,7 @@ setproctitle==1.1.10
 sgt-launcher==0.2.4
 simplejson==3.13.2
 six==1.11.0
-sqlparse==0.4.1
+sqlparse==0.5.0
 ssh-import-id==5.7
 system-service==0.3
 systemd-python==234
