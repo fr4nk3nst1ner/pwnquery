@@ -2,7 +2,7 @@ aiocontextvars==0.2.2
 apturl==0.5.2
 asgiref==3.3.1
 asn1crypto==0.24.0
-bottle==0.12.13
+bottle==0.12.20
 Brlapi==0.6.6
 catfish==1.4.4
 certifi==2023.7.22
