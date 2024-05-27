@@ -18,7 +18,7 @@ cycler==0.10.0
 dataclasses==0.8
 defer==1.0.6
 distro-info===0.18ubuntu0.18.04.1
-Django==3.1.7
+Django==3.2.25
 django-cors-headers==3.7.0
 django-filter==2.4.0
 django-utils-six==2.0
