@@ -25,7 +25,7 @@ django-utils-six==2.0
 djangorestframework==3.12.4
 docker==2.5.1
 docker-pycreds==0.2.1
-Glances==2.11.1
+Glances==3.2.1
 httplib2==0.19.0
 idna==2.6
 immutables==0.15
