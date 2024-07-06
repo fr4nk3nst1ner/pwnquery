@@ -5,7 +5,7 @@ asn1crypto==0.24.0
 bottle==0.12.20
 Brlapi==0.6.6
 catfish==1.4.4
-certifi==2023.7.22
+certifi==2024.7.4
 chardet==3.0.4
 click==7.1.2
 colorama==0.4.4
