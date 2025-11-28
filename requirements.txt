@@ -22,7 +22,7 @@ Django==3.2.25
 django-cors-headers==3.7.0
 django-filter==2.4.0
 django-utils-six==2.0
-djangorestframework==3.12.4
+djangorestframework==3.15.2
 docker==2.5.1
 docker-pycreds==0.2.1
 Glances==3.2.1
